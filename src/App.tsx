@@ -7,14 +7,18 @@ import './App.css';
 function App() {
   const [isMenu, setIsMenu] = useState(false);
 
+  const toggleMenu = () => {
+    setIsMenu(!isMenu);
+  };
+
   return (
     <div className="app">
       <header>
-        <HeaderComponent />
+        <HeaderComponent isMenu={isMenu} onNavigate={toggleMenu} />
       </header>
       <main>
         {isMenu && <MenuComponent />}
-        {!isMenu && <FormComponent/>}
+        {!isMenu && <FormComponent />}
       </main>
     </div>
   );
