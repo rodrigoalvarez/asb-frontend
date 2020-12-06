@@ -5,6 +5,7 @@ import FormComponent from './components/Form';
 import './App.css';
 
 function App() {
+  const userName = 'Rodrigo';
   const [isMenu, setIsMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -18,7 +19,7 @@ function App() {
       </header>
       <main>
         {isMenu && <MenuComponent />}
-        {!isMenu && <FormComponent />}
+        {!isMenu && <FormComponent userName={userName} />}
       </main>
     </div>
   );
